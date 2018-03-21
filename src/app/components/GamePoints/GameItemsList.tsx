@@ -19,7 +19,12 @@ export const GameItemsList = (props: IGameItemsListProps) => {
             {
                 props.gameItemsList.map((gameItem: IGameItemProps, index: number) => {
                     return (
-                        <div onClick={() => props.onGameItemSelect(gameItem)} className={css(gameItem.style, gameItemStyle)} key={index}>{gameItem.title}</div>
+                        <div
+                            onClick={() => props.onGameItemSelect(gameItem)}
+                            className={css(gameItem.style, gameItemStyle)}
+                            key={index}>
+                            {gameItem.title}
+                        </div>
                     );
                 })
             }

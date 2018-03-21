@@ -14,7 +14,6 @@ interface IGameItemProps {
     score: number;
 }
 
-
 interface IGameItemsContainerProps {
     gameItemsList: Array<IGameItemProps>;
     onGameItemSelect: () => void;
