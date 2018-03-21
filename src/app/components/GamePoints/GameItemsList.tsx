@@ -1,17 +1,7 @@
 import * as React from 'react';
 import { css } from 'react-emotion';
 import { gameItemStyle, gameItemsListStyle } from './gameItems.styles';
-
-interface IGameItemProps {
-    title: string;
-    style?: any;
-    score: number;
-}
-
-interface IGameItemsListProps {
-    gameItemsList: Array<IGameItemProps>;
-    onGameItemSelect: (gameItem: IGameItemProps) => void;
-}
+import { IGameItemsListProps, IGameItemProps } from 'app/components/types';
 
 export const GameItemsList = (props: IGameItemsListProps) => {
     return (

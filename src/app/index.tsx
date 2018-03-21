@@ -10,8 +10,7 @@ injectGlobal`
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
-  }
-`;
+  }`;
 
 export const App = hot(module)(() => (
   <TodoApp />

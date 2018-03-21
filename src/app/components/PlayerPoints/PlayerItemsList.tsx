@@ -1,17 +1,25 @@
 import * as React from 'react';
 import { css } from 'react-emotion';
-import { playerItemStyle, playerTableListHeaderItemStyle, playerTableListStyle } from 'app/components/PlayerPoints/playerItems.styles';
-import { compose } from 'recompose';
+import {
+    playerItemStyle,
+    playerTableListHeaderItemStyle,
+    playerTableListStyle
+} from 'app/components/PlayerPoints/playerItems.styles';
+import { IPlayerItemProps } from 'app/components/types';
 
-
-export const calculateTotalItemScore = (item) => {
+export const calculateTotalItemScore = (item: IPlayerItemProps): number => {
     let bonusInfo = calculateItemBonus(item);
     let quantity = bonusInfo.quantity;
     let totalScore = bonusInfo.bonusScore;
     return totalScore + quantity * item.score;
 }
 
-export const calculateItemBonus = (item) => {
+interface IItemBonusCalculationResult {
+    bonusScore: number;
+    quantity: number;
+}
+
+export const calculateItemBonus = (item: IPlayerItemProps): IItemBonusCalculationResult => {
     const result = {
         bonusScore: 0,
         quantity: item.qty
@@ -23,8 +31,11 @@ export const calculateItemBonus = (item) => {
     return result;
 }
 
-export const PlayerItemsList = (props) => {
-    console.log(props);
+interface PlayerItemsListProps {
+    playerItemsList: Array<IPlayerItemProps>;
+}
+
+export const PlayerItemsList = (props: PlayerItemsListProps) => {
     return (
         <div className={css(playerTableListStyle)}>
             <table>
@@ -37,7 +48,7 @@ export const PlayerItemsList = (props) => {
                 </thead>
                 <tbody>
                     {
-                        props.playerItems.map((item, index) => {
+                        props.playerItemsList.map((item, index) => {
                             return (
                                 <tr key={index}>
                                     <td><div className={css(item.style, playerItemStyle)}>{item.title}</div></td>

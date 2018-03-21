@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { css } from 'react-emotion';
+import { headerStyle } from 'app/components/common/header.styles';
 
 interface IHeaderProps {
     headerTitle: string;
@@ -6,6 +8,6 @@ interface IHeaderProps {
 
 export const Header = (props: IHeaderProps) => {
     return (
-        <div>{props.headerTitle}</div>
+        <div className={css(headerStyle)}>{props.headerTitle}</div>
     );
 };
