@@ -29,7 +29,8 @@ export const footerBonusPartStyle = {
 
 export const footerPartStyle = {
     padding: '5px',
-    whiteSpace: 'nowrap'
+    whiteSpace: 'nowrap',
+    minWidth: '170px'
 };
 
 export const playerTableListStyle = {

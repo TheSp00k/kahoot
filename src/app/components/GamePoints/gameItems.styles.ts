@@ -6,7 +6,8 @@ export const gameItemStyle = {
     height: '40px',
     paddingTop: '20px',
     textAlign: 'center',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    margin: '5px'
 };
 
 export const smallGameItemStyle = {
@@ -25,5 +26,12 @@ export const gameItemsListStyle = {
     display: 'flex',
     justifyContent: 'space-between',
     flexFlow: 'wrap',
-    padding: '10px'
+    position: 'relative',
+    height: '100%'
 };
+
+export const gameItemsListChildStyle = {
+    overflowY: 'auto',
+    height: '100%',
+    position: 'absolute'
+}
